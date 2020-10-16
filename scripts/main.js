@@ -1,7 +1,7 @@
 import { CriminalList } from "./criminals/CriminalList.js"
 import { OfficerList } from "./officers/OfficersList.js"
-import { convictionSelect } from "./convictions/ConvictionSelect.js"
+import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
 
-convictionSelect()
+ConvictionSelect()
 OfficerList()
 CriminalList()
