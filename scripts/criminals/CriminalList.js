@@ -9,6 +9,6 @@ export const CriminalList = () => {
   .then(() => {
     const eachCriminal = useCriminals()
     criminalHTMLRep = eachCriminal.map(criminal => Criminal(criminal))
-    criminalContent.innerHTML += `${criminalHTMLRep}`  
+    criminalContent.innerHTML += `${criminalHTMLRep.join(" ")}`  
   })
 }
