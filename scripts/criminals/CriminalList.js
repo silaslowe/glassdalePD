@@ -1,14 +1,14 @@
-import { Criminal } from "./Criminal.js"
-import { useCriminals, getCriminals } from "./CriminalProvider.js"
+import {getCriminals, useCriminals} from './CriminalProvider.js'
+import {Criminal} from './Criminal.js'
+
 
 export const CriminalList = () => {
-  let criminalContentHTML = ""
   const criminalContent = document.querySelector(".criminalsContainer")
-  getCriminals().then(() => {
-    const criminalArray = useCriminals()
-    for (const criminal of criminalArray) {
-      criminalContentHTML += Criminal(criminal)
-    }
-    criminalContent.innerHTML += `${criminalContentHTML}`
+  let criminalHTMLRep = ''
+    return getCriminals()
+  .then(() => {
+    const eachCriminal = useCriminals()
+    criminalHTMLRep = eachCriminal.map(criminal => Criminal(criminal))
+    criminalContent.innerHTML += `${criminalHTMLRep}`  
   })
 }
