@@ -5,8 +5,10 @@ export const OfficerList = () => {
    let officerHTMLRep = ''
     return getOfficers()
    .then(() => {
-   const eachOfficer = useOfficers()
-   officerHTMLRep = eachOfficer.map(officer => `<p class="officer">${officer.name}</p>`).join(" ")
+   
+      const eachOfficer = useOfficers()
+   
+      officerHTMLRep = eachOfficer.map(officer => `<p class="officer">${officer.name}</p>`).join(" ")
    officerContent.innerHTML += officerHTMLRep 
 })
 }

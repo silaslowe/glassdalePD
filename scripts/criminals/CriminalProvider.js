@@ -11,3 +11,4 @@ export const getCriminals = () => {
         criminals = parsedCriminals
     })
 }
+console.log(criminals)
