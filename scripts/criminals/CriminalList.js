@@ -31,8 +31,8 @@ eventHub.addEventListener("crimeChosen", event => {
 
   const convictionThatWasChosen = convictionArray.find((convictionObj) => {
     return convictionObj.id === event.detail.crimeThatWasChosen})
-       
-  if(event.detail.crimeThatWasChosen !== 0) {
+
+    if(event.detail.crimeThatWasChosen !== 0) {
     const matchingCriminals = criminalArray.filter((criminalObj) => criminalObj.conviction === convictionThatWasChosen.name)
     render(matchingCriminals)
   }
@@ -47,9 +47,11 @@ eventHub.addEventListener("officerChosen", event => {
      return officer.id === officerId
   })
 
-  const criminalsArrested = criminalArray.filter(criminalObj => 
-     criminalObj.arrestingOfficer === officerName.name) 
-     console.log(criminalsArrested)
-     render(criminalsArrested)
+console.log(officerName)
+
+   if(officerName) {
+      const criminalsArrested = criminalArray.filter(criminalObj =>  criminalObj.arrestingOfficer === officerName.name) 
+      render(criminalsArrested)
+  }
 })
 
