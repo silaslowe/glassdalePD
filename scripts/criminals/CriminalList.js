@@ -1,4 +1,5 @@
 import {getCriminals, useCriminals} from './CriminalProvider.js'
+import {useOfficers} from '../officers/OfficerProvider.js'
 import {useConvictions} from '../convictions/ConvictionProvider.js'
 import {Criminal} from './Criminal.js'
 
@@ -15,22 +16,6 @@ export const CriminalList = () => {
       })
 }
 
-
-eventHub.addEventListener("crimeChosen", event => {
-  const criminalArray = useCriminals()
-  const convictionArray = useConvictions() 
-
-  const convictionThatWasChosen = convictionArray.find((convictionObj) => {
-    return convictionObj.id === event.detail.crimeThatWasChosen})
-   
-    console.log("Convict number ", event.detail.crimeThatWasChosen)
-    
-  if(event.detail.crimeThatWasChosen !== 0) {
-    const matchingCriminals = criminalArray.filter((criminalObj) => criminalObj.conviction === convictionThatWasChosen.name)
-    render(matchingCriminals)
-  }
-})
-
 const render = criminalCollection => {
   contentTarget.innerHTML =  `
   <h3>Glassdale's Most Wantedest<h3>
@@ -40,4 +25,31 @@ const render = criminalCollection => {
   `
 }
 
+eventHub.addEventListener("crimeChosen", event => {
+  const criminalArray = useCriminals()
+  const convictionArray = useConvictions() 
+
+  const convictionThatWasChosen = convictionArray.find((convictionObj) => {
+    return convictionObj.id === event.detail.crimeThatWasChosen})
+       
+  if(event.detail.crimeThatWasChosen !== 0) {
+    const matchingCriminals = criminalArray.filter((criminalObj) => criminalObj.conviction === convictionThatWasChosen.name)
+    render(matchingCriminals)
+  }
+})
+
+
+eventHub.addEventListener("officerChosen", event => {
+  const officerId = parseInt(event.detail.officerThatWasChosen)
+  const officerArray = useOfficers()
+  const criminalArray = useCriminals()
+  const officerName = officerArray.find(officer => {
+     return officer.id === officerId
+  })
+
+  const criminalsArrested = criminalArray.filter(criminalObj => 
+     criminalObj.arrestingOfficer === officerName.name) 
+     console.log(criminalsArrested)
+     render(criminalsArrested)
+})
 
