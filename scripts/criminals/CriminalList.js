@@ -1,4 +1,5 @@
 import {getCriminals, useCriminals} from './CriminalProvider.js'
+import {useOfficers} from '../officers/OfficerProvider.js'
 import {useConvictions} from '../convictions/ConvictionProvider.js'
 import {Criminal} from './Criminal.js'
 
@@ -15,6 +16,14 @@ export const CriminalList = () => {
       })
 }
 
+const render = criminalCollection => {
+  contentTarget.innerHTML =  `
+  <h3>Glassdale's Most Wantedest<h3>
+  <div class="criminalList">
+  ${criminalCollection.map(criminal => Criminal(criminal)).join(" ")}
+  </div>
+  `
+}
 
 eventHub.addEventListener("crimeChosen", event => {
   const criminalArray = useCriminals()
@@ -29,13 +38,18 @@ eventHub.addEventListener("crimeChosen", event => {
   }
 })
 
-const render = criminalCollection => {
-  contentTarget.innerHTML =  `
-  <h3>Glassdale's Most Wantedest<h3>
-  <div class="criminalList">
-  ${criminalCollection.map(criminal => Criminal(criminal)).join(" ")}
-  </div>
-  `
-}
 
+eventHub.addEventListener("officerChosen", event => {
+  const officerId = parseInt(event.detail.officerThatWasChosen)
+  const officerArray = useOfficers()
+  const criminalArray = useCriminals()
+  const officerName = officerArray.find(officer => {
+     return officer.id === officerId
+  })
+
+  const criminalsArrested = criminalArray.filter(criminalObj => 
+     criminalObj.arrestingOfficer === officerName.name) 
+     console.log(criminalsArrested)
+     render(criminalsArrested)
+})
 
