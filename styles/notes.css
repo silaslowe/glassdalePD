@@ -1,0 +1,22 @@
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noteEntryContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.individualNote {
+  width: 25%;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
