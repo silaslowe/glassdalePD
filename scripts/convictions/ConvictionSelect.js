@@ -12,7 +12,7 @@ export const ConvictionSelect = () => {
 
 const render = (collection) => {
   contentTarget.innerHTML += `
-  <h2>Crimes<h2>
+  <h2>Moral Turpitude <h2>
   <select class="dropdown" id="crimeSelect">
   <option value="0">Please Select a Crime...</option>
   ${collection.map(item => `<option value="${item.id}">${item.name}</option>`)}
