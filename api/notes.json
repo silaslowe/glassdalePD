@@ -48,6 +48,20 @@
       "date": "2020-10-12",
       "note": "Boy howdy was this a tuff interview.",
       "id": 7
+    },
+    {
+      "author": "Dill",
+      "suspect": "Pickle",
+      "date": "2020-10-31",
+      "note": "Dill Pickle",
+      "id": 8
+    },
+    {
+      "author": "Jim",
+      "suspect": "Bob",
+      "date": "2020-10-29",
+      "note": "Jim Bob is the names of the two people from the two previous feilds.",
+      "id": 9
     }
   ]
 }

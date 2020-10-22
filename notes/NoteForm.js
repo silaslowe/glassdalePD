@@ -20,14 +20,17 @@ eventHub.addEventListener("click", (clickEvent) => {
   const note = document.querySelector("#note__note").value
 
   if (clickEvent.target.id === "saveNote") {
+    if (!author || !suspect || !date || !note) {
+      return alert("Please fill in all feilds")
+    }
     const newNote = {
       "author": author,
       "suspect": suspect,
       "date": date,
       "note": note,
     }
-    console.log(newNote)
     saveNote(newNote)
+    render()
   }
 })
 
