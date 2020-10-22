@@ -4,6 +4,10 @@ import { getNotes, useNotes } from "./NoteProvider.js"
 const noteEntryContainer = document.querySelector(".noteEntryContainer")
 const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("noteStateChanged", (event) => {
+  noteList()
+})
+
 export const noteList = () => {
   return getNotes().then(() => {
     const noteArray = useNotes()
