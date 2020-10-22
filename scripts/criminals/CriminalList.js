@@ -18,7 +18,7 @@ export const CriminalList = () => {
 
 const render = criminalCollection => {
   contentTarget.innerHTML =  `
-  <h3>Glassdale's Most Wantedest<h3>
+  <h3 class="criminals--title">Glassdale's Most Wantedest<h3>
   <div class="criminalList">
   ${criminalCollection.map(criminal => Criminal(criminal)).join(" ")}
   </div>
@@ -47,7 +47,6 @@ eventHub.addEventListener("officerChosen", event => {
      return officer.id === officerId
   })
 
-console.log(officerName)
 
    if(officerName) {
       const criminalsArrested = criminalArray.filter(criminalObj =>  criminalObj.arrestingOfficer === officerName.name) 

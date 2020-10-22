@@ -10,6 +10,8 @@
     border: 2px dotted gray;
     margin: 1rem;
     padding: 1rem;
+    background-color: bisque;
+    border-radius: 25px;
 }
 
 .criminalList {
@@ -17,4 +19,9 @@
     flex-direction: row;
     flex-wrap: wrap;  
     justify-content: center
+}
+
+.criminals--title {
+    font-size: 2rem;
+    text-decoration: underline;
 }
