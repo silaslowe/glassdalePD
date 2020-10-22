@@ -5,10 +5,10 @@ const eventHub = document.querySelector(".container")
 
 const render = () => {
   return (noteFormContainer.innerHTML = `
-        <input id="note__date" type="date">
-        <input id="note__author" type="text" placeholder="Your name here">
-        <input id="note__suspect" type="text" placeholder="Suspect name here">
-        <textarea id="note__note" placeholder="Please Enter Notes Here"></textarea>
+        <input class="noteFormInput" id="note__date" type="date">
+        <input class="noteFormInput" id="note__author" type="text" placeholder="Your name here">
+        <input class="noteFormInput" id="note__suspect" type="text" placeholder="Suspect name here">
+        <textarea class="noteFormInput" id="note__note" rows="12" placeholder=" Please Enter Notes Here" ></textarea>
         <button id="saveNote">Enter Note</button>
     `)
 }
