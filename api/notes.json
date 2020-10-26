@@ -13,55 +13,6 @@
       "date": "10/22/2020",
       "note": "Great in Sling Blade. Loved the part about the Frecnh fried potatoes.",
       "id": 2
-    },
-    {
-      "author": "Silas",
-      "suspect": "Greg",
-      "date": "2020-10-07",
-      "note": "Greg is a name",
-      "id": 3
-    },
-    {
-      "author": "Silas",
-      "suspect": "Greg",
-      "date": "2020-10-07",
-      "note": "Greg is a name",
-      "id": 4
-    },
-    {
-      "author": "sdf",
-      "suspect": "sdf",
-      "date": "2020-09-30",
-      "note": "sdf",
-      "id": 5
-    },
-    {
-      "author": "My Name",
-      "suspect": "Their Name",
-      "date": "2020-10-26",
-      "note": "This is a test",
-      "id": 6
-    },
-    {
-      "author": "Fart",
-      "suspect": "Stunk",
-      "date": "2020-10-12",
-      "note": "Boy howdy was this a tuff interview.",
-      "id": 7
-    },
-    {
-      "author": "Dill",
-      "suspect": "Pickle",
-      "date": "2020-10-31",
-      "note": "Dill Pickle",
-      "id": 8
-    },
-    {
-      "author": "Jim",
-      "suspect": "Bob",
-      "date": "2020-10-29",
-      "note": "Jim Bob is the names of the two people from the two previous feilds.",
-      "id": 9
     }
   ]
 }
