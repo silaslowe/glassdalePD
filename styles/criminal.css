@@ -1,27 +1,42 @@
+.criminal-alibi-contaier {
+  display: flex;
+  flex-direction: row;
+}
+
 .criminalsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+}
+
+.alibiContaier {
+  border: 3px solid black;
 }
 
 .criminal {
-    width: 25%;
-    border: 2px dotted gray;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: bisque;
-    border-radius: 25px;
+  width: 25%;
+  border: 2px dotted gray;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: bisque;
+  border-radius: 25px;
 }
 
 .criminalList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;  
-    justify-content: center
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .criminals--title {
-    font-size: 2rem;
-    text-decoration: underline;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.alibi--btn {
+  border-radius: 25px;
+  padding: 0.25rem;
 }

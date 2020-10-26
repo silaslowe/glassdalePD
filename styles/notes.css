@@ -8,9 +8,9 @@
 .noteFormContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-evenly;
   justify-content: flex-start;
-  width: 40%;
+  width: 55%;
   border: 4px solid black;
   border-radius: 25px;
   padding: 1rem;
@@ -27,21 +27,24 @@
 #saveNote {
   width: 30%;
   text-align: center;
+  border: 4px solid black;
+  border-radius: 25px;
 }
 
 .noteEntryContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 40%;
 }
 
 .individualNote {
-  width: 25%;
+  width: 40%;
   border: 2px solid black;
   border-radius: 25px;
   margin: 0.5rem;
   padding: 0.5rem;
   background-color: blanchedalmond;
+  height: 50%;
 }

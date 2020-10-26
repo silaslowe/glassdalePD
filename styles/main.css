@@ -25,6 +25,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
@@ -33,4 +34,13 @@ h6 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+header {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background-color: blanchedalmond;
 }
