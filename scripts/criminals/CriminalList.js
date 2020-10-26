@@ -2,6 +2,7 @@ import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { useOfficers } from "../officers/OfficerProvider.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
 import { Criminal } from "./Criminal.js"
+import { WitnessList } from "../witnesses/WitnessList.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -55,4 +56,8 @@ eventHub.addEventListener("officerChosen", (event) => {
     )
     render(criminalsArrested)
   }
+})
+
+eventHub.addEventListener("displayWitnesses", (event) => {
+  WitnessList()
 })

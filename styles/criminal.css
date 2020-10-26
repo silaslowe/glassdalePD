@@ -1,6 +1,7 @@
 .criminal-alibi-contaier {
   display: flex;
   flex-direction: row;
+  margin-top: 3rem;
 }
 
 .criminalsContainer {
@@ -12,9 +13,14 @@
 }
 
 .alibiContaier {
+  margin-top: 2rem;
   border: 3px solid black;
 }
 
+.criminals--title {
+  font-size: 2rem;
+  text-decoration: underline;
+}
 .criminal {
   width: 25%;
   border: 2px dotted gray;
@@ -29,11 +35,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.criminals--title {
-  font-size: 2rem;
-  text-decoration: underline;
 }
 
 .alibi--btn {
