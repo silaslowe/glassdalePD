@@ -26,6 +26,8 @@ const render = (criminalCollection) => {
   `
 }
 
+// Chooses the criminals by crime using the dropdown
+
 eventHub.addEventListener("crimeChosen", (event) => {
   const criminalArray = useCriminals()
   const convictionArray = useConvictions()
@@ -42,6 +44,8 @@ eventHub.addEventListener("crimeChosen", (event) => {
   }
 })
 
+// Choses the criminals by the arresting officer using the dropdown
+
 eventHub.addEventListener("officerChosen", (event) => {
   const officerId = parseInt(event.detail.officerThatWasChosen)
   const officerArray = useOfficers()
@@ -57,6 +61,8 @@ eventHub.addEventListener("officerChosen", (event) => {
     render(criminalsArrested)
   }
 })
+
+// Displays the witnesses and their statments
 
 eventHub.addEventListener("displayWitnesses", (event) => {
   WitnessList()

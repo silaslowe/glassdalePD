@@ -6,7 +6,6 @@ export const getWitnesses = () => {
   return fetch("https://criminals.glassdale.us/witnesses").then((repsonse) =>
     repsonse.json().then((parsedWitnesses) => {
       witnesses = parsedWitnesses
-      console.log(witnesses)
     })
   )
 }

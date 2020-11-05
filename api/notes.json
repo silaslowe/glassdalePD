@@ -1,25 +1,18 @@
 {
   "notes": [
     {
-      "id": 1,
-      "author": "Silas",
-      "suspect": "Bill Barr",
-      "date": "10/22/2020",
-      "note": "This guy is doing a great job for reelz."
-    },
-    {
-      "author": "Silas",
-      "suspect": "Billy Bob",
-      "date": "10/22/2020",
-      "note": "Great in Sling Blade. Loved the part about the Frecnh fried potatoes.",
-      "id": 2
-    },
-    {
-      "author": "Silas",
-      "suspect": "???",
-      "date": "2020-10-26",
-      "note": "2 people said the suspect drove a truck and 2 people said he wore a dealership hat.\n\n",
+      "author": "You",
+      "criminalId": 25,
+      "date": "2020-11-12",
+      "note": "Help, I need somebody,\nHelp, not just anybody.",
       "id": 3
+    },
+    {
+      "author": "sdfs",
+      "criminalId": 1,
+      "date": "2020-11-18",
+      "note": "dsfsd",
+      "id": 4
     }
   ]
 }
