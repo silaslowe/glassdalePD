@@ -25,7 +25,7 @@ const render = (collection) => {
           .join(" ")}
        </select>
         <textarea class="noteFormInput" id="note__note" rows="12" placeholder=" Please Enter Notes Here" ></textarea>
-        <button id="saveNote">Enter Note</button>
+        <button id="saveNote">Save Note</button>
     `)
 }
 
@@ -39,7 +39,7 @@ eventHub.addEventListener("click", (clickEvent) => {
     const note = document.querySelector("#note__note").value
 
     if (clickEvent.target.id === "saveNote") {
-      if (!author || !criminalId || !date || !note) {
+      if (!author || !criminalId || criminalId === "0" || !date || !note) {
         return alert("Please fill in all feilds")
       }
       const newNote = {

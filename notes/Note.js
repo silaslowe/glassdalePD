@@ -6,6 +6,7 @@ export const Note = (noteObj) => {
     <p>Officer: ${author}</p>
     <p>Suspect: ${suspect}</p>
     <p>Notes: ${note}</p>
+    <button id="deleteNote--${noteObj.id}">Delete</button>
   </div>
     `
 }
