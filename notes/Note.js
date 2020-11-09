@@ -1,12 +1,18 @@
-export const Note = (noteObj) => {
-  const { author, suspect, date, note } = noteObj
+export const Note = (noteObj, criminalObj) => {
+  const { author, id, date, note } = noteObj
   return `
-    <div class="individualNote">
+    
     <p>Date: ${date}</p>
     <p>Officer: ${author}</p>
-    <p>Suspect: ${suspect}</p>
+    <p>Suspect: ${criminalObj.name}</p>
     <p>Notes: ${note}</p>
-    <button id="deleteNote--${noteObj.id}">Delete</button>
-  </div>
+    <button id="deleteNote--${id}">Delete</button>
     `
 }
+
+// <section class="individualNote">
+// <h2>Note about}</h2>
+// ${note.note}
+// <button id="deleteNote--${note.id}">Delete</button>
+// </section>
+//

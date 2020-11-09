@@ -16,24 +16,17 @@ export const noteList = () => {
     .then(() => {
       const noteArray = useNotes()
       const criminalArray = useCriminals()
-      console.log(noteArray, criminalArray)
       render(noteArray, criminalArray)
     })
 }
 
 const render = (noteCollection, criminalCollection) => {
-  contentTarget.innerHTML = noteCollection.map((note) => {
-    const relatedCriminal = criminalCollection.find((criminal) => criminal.id === note.criminalId)
-    // console.log("INSIDE MAP", criminal.id, note.criminalId)
-    console.log(relatedCriminal)
-    return `
-    <section class="individualNote">
-    <h2>Note about ${relatedCriminal.name}</h2>
-    ${note.note}
-    <button id="deleteNote--${note.id}">Delete</button>
-    </section>
-    `
-  })
+  contentTarget.innerHTML = `<section class="Notes"> 
+    ${noteCollection.map((note) => {
+      const relatedCriminal = criminalCollection.find((criminal) => criminal.id === note.criminalId)
+      return `<div class="individualNote">${Note(note, relatedCriminal)}</div>`
+    })}
+</section>`
 }
 
 eventHub.addEventListener("click", (clickEvent) => {
