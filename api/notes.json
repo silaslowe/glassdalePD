@@ -1,18 +1,3 @@
 {
-  "notes": [
-    {
-      "author": "You",
-      "criminalId": 25,
-      "date": "2020-11-12",
-      "note": "Help, I need somebody,\nHelp, not just anybody.",
-      "id": 3
-    },
-    {
-      "author": "sdfs",
-      "criminalId": 1,
-      "date": "2020-11-18",
-      "note": "dsfsd",
-      "id": 4
-    }
-  ]
+  "notes": []
 }
