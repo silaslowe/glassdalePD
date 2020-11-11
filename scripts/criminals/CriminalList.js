@@ -8,6 +8,7 @@ import {
   useCriminalFacilities,
 } from "../facilities/CriminalFacilitiesProvider.js"
 import { getFacilities, useFacilities } from "../facilities/FacilitiesProvider.js"
+import { FacilitiesList } from "../facilities/FacilityList.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -26,13 +27,12 @@ export const CriminalList = () => {
       facilities = useFacilities()
       crimFac = useCriminalFacilities()
       criminals = useCriminals()
+      console.log(criminals, facilities, crimFac)
       render(criminals, facilities, crimFac)
     })
 }
 
 const render = (criminalCollection, allFacilities, allRelationships) => {
-  // console.log("IN RENDER", criminalCollection, allFacilities, allRelationships)
-
   // Each criminal is given a list of facilities they served time at
 
   contentTarget.innerHTML = criminalCollection
@@ -40,6 +40,7 @@ const render = (criminalCollection, allFacilities, allRelationships) => {
       const facilityRelationshipForThisCriminal = allRelationships.filter(
         (cf) => cf.criminalId === criminalObj.id
       )
+      // console.log(facilityRelationshipForThisCriminal)
       const facilities = facilityRelationshipForThisCriminal.map((cf) => {
         const matchingFacilityObject = allFacilities.find(
           (facility) => facility.id === cf.facilityId
@@ -94,7 +95,7 @@ eventHub.addEventListener("displayWitnesses", (event) => {
 })
 
 eventHub.addEventListener("facilitiesButtonClicked", (event) => {
-  // WitnessList()
+  FacilitiesList()
   console.log("Yoyo")
 })
 
