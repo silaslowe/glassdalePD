@@ -13,6 +13,7 @@ export const Criminal = (criminalObj, facilities) => {
     <p>Term End: ${new Date(end).toLocaleDateString("en-US")}</p> 
     <button class="alibi--btn" id="associates--${id}">Associate Alibis</button>
     <div>
+    <div class="alibiContainer--${id}"></div>
                 <h2>Facilities</h2>
                 <ul>
                     ${facilities.map((f) => `<li>${f.facilityName}</li>`).join("")}

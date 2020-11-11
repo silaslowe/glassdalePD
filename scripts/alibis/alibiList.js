@@ -2,7 +2,6 @@ import { useCriminals } from "../criminals/CriminalProvider.js"
 import { Alibi } from "./alibi.js"
 
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".alibiContainer")
 
 export const AlibiList = () => {
   eventHub.addEventListener("criminalSelected", (event) => {
@@ -10,15 +9,18 @@ export const AlibiList = () => {
     const foundCriminal = criminalArray.find((criminal) => {
       return criminal.id === event.detail.criminalId
     })
-    const criminalName = foundCriminal.name
     const criminalAlibis = [...foundCriminal.known_associates]
-    render(criminalAlibis, criminalName)
+    render(criminalAlibis, foundCriminal.id)
   })
 }
 
-const render = (alibiCollection, name) => {
-  contentTarget.innerHTML = `<h3>${name}</h3>`
-  alibiCollection.map((alibi) => {
-    return (contentTarget.innerHTML += Alibi(alibi))
-  })
+const render = (alibiCollection, id) => {
+  const contentTarget = document.querySelector(`.alibiContainer--${id}`)
+  if (!contentTarget.innerHTML) {
+    alibiCollection.map((alibi) => {
+      return (contentTarget.innerHTML = Alibi(alibi))
+    })
+  } else {
+    contentTarget.innerHTML = ""
+  }
 }
