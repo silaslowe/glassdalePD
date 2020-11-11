@@ -27,27 +27,27 @@ export const CriminalList = () => {
       facilities = useFacilities()
       crimFac = useCriminalFacilities()
       criminals = useCriminals()
-      console.log(criminals, facilities, crimFac)
+      // console.log(criminals, facilities, crimFac)
       render(criminals, facilities, crimFac)
     })
 }
 
-const render = (criminalCollection, allFacilities, allRelationships) => {
+const render = (allCriminals, allFacilities, allRelationships) => {
   // Each criminal is given a list of facilities they served time at
 
-  contentTarget.innerHTML = criminalCollection
+  contentTarget.innerHTML = allCriminals
     .map((criminalObj) => {
       const facilityRelationshipForThisCriminal = allRelationships.filter(
         (cf) => cf.criminalId === criminalObj.id
       )
       // console.log(facilityRelationshipForThisCriminal)
-      const facilities = facilityRelationshipForThisCriminal.map((cf) => {
+      const facilitiesArr = facilityRelationshipForThisCriminal.map((cf) => {
         const matchingFacilityObject = allFacilities.find(
           (facility) => facility.id === cf.facilityId
         )
         return matchingFacilityObject
       })
-      return Criminal(criminalObj, facilities)
+      return Criminal(criminalObj, facilitiesArr)
     })
     .join("")
 }
@@ -96,7 +96,6 @@ eventHub.addEventListener("displayWitnesses", (event) => {
 
 eventHub.addEventListener("facilitiesButtonClicked", (event) => {
   FacilitiesList()
-  console.log("Yoyo")
 })
 
 // {

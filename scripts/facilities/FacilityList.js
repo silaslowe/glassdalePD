@@ -23,16 +23,14 @@ export const FacilitiesList = () => {
     })
 }
 
-const render = (allFacilities, allRelationships, criminalsCollection) => {
+const render = (allFacilities, allRelationships, allCriminals) => {
   contentTarget.innerHTML = allFacilities
     .map((facilityObj) => {
       const criminalRelationshipForThisFacility = allRelationships.filter(
         (cf) => cf.facilityId === facilityObj.id
       )
       const criminalsArr = criminalRelationshipForThisFacility.map((cf) => {
-        const matchingCriminalObj = criminalsCollection.find(
-          (criminal) => criminal.id === cf.criminalId
-        )
+        const matchingCriminalObj = allCriminals.find((criminal) => criminal.id === cf.criminalId)
         return matchingCriminalObj
       })
 
