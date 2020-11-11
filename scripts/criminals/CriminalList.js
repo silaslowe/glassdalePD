@@ -14,21 +14,27 @@ const eventHub = document.querySelector(".container")
 
 // Listen for the custom event you dispatched in ConvictionSelect
 
+let facilities = []
+let crimFac = []
+let criminals = []
+
 export const CriminalList = () => {
   return getCriminals()
     .then(getCriminalFacilities)
     .then(getFacilities)
     .then(() => {
-      const facilities = useFacilities()
-      const crimFac = useCriminalFacilities()
-      const criminals = useCriminals()
-
-      console.log("All arrayd", facilities, crimFac, criminals)
+      facilities = useFacilities()
+      crimFac = useCriminalFacilities()
+      criminals = useCriminals()
       render(criminals, facilities, crimFac)
     })
 }
 
 const render = (criminalCollection, allFacilities, allRelationships) => {
+  // console.log("IN RENDER", criminalCollection, allFacilities, allRelationships)
+
+  // Each criminal is given a list of facilities they served time at
+
   contentTarget.innerHTML = criminalCollection
     .map((criminalObj) => {
       const facilityRelationshipForThisCriminal = allRelationships.filter(
@@ -59,7 +65,7 @@ eventHub.addEventListener("crimeChosen", (event) => {
     const matchingCriminals = criminalArray.filter(
       (criminalObj) => criminalObj.conviction === convictionThatWasChosen.name
     )
-    render(matchingCriminals)
+    render(matchingCriminals, facilities, crimFac)
   }
 })
 
@@ -77,7 +83,7 @@ eventHub.addEventListener("officerChosen", (event) => {
     const criminalsArrested = criminalArray.filter(
       (criminalObj) => criminalObj.arrestingOfficer === officerName.name
     )
-    render(criminalsArrested)
+    render(criminalsArrested, facilities, crimFac)
   }
 })
 
@@ -85,6 +91,11 @@ eventHub.addEventListener("officerChosen", (event) => {
 
 eventHub.addEventListener("displayWitnesses", (event) => {
   WitnessList()
+})
+
+eventHub.addEventListener("facilitiesButtonClicked", (event) => {
+  // WitnessList()
+  console.log("Yoyo")
 })
 
 // {
