@@ -6,6 +6,7 @@ const eventHub = document.querySelector(".container")
 export const AlibiList = () => {
   eventHub.addEventListener("criminalSelected", (event) => {
     const criminalArray = useCriminals()
+    console.log(criminalArray)
     const foundCriminal = criminalArray.find((criminal) => {
       return criminal.id === event.detail.criminalId
     })
@@ -17,9 +18,11 @@ export const AlibiList = () => {
 const render = (alibiCollection, id) => {
   const contentTarget = document.querySelector(`.alibiContainer--${id}`)
   if (!contentTarget.innerHTML) {
-    alibiCollection.map((alibi) => {
-      return (contentTarget.innerHTML = Alibi(alibi))
-    })
+    contentTarget.innerHTML = alibiCollection
+      .map((alibi) => {
+        return Alibi(alibi)
+      })
+      .join("")
   } else {
     contentTarget.innerHTML = ""
   }

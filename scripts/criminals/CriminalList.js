@@ -98,6 +98,10 @@ eventHub.addEventListener("facilitiesButtonClicked", (event) => {
   FacilitiesList()
 })
 
+eventHub.addEventListener("criminalsButtonClicked", (event) => {
+  CriminalList()
+})
+
 // {
 /* <h3 class="criminals--title">Glassdale's Most Wantedest<h3>
   <div class="criminalList"> */
