@@ -64,8 +64,9 @@ header {
   width: 80%;
 }
 
-#witnesses {
-  font-size: 1.5rem;
+#witnesses,
+#facilities,
+#criminals {
   padding: 0.25rem;
   border-radius: 5px;
 }

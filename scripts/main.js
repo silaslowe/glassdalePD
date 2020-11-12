@@ -8,6 +8,7 @@ import { AlibiList } from "./alibis/alibiList.js"
 import { getWitnesses } from "./witnesses/WitnessProvider.js"
 import { WitnessList } from "./witnesses/WitnessList.js"
 import { renderFacilitiesButton } from "./facilities/DisplayFacilitiesButton.js"
+import { renderCriminalsButton } from "./criminals/DisplayCriminalsBtn.js"
 
 OfficerSelect()
 ConvictionSelect()
@@ -19,3 +20,4 @@ AlibiList()
 getWitnesses()
 WitnessList()
 renderFacilitiesButton()
+renderCriminalsButton()
